@@ -13,7 +13,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.background
+import androidx.compose.foundation.background
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -34,6 +34,7 @@ private data class SquircleSpec(
     val size: SquircleSize,
     val restingXFraction: Float,
     val restingYFraction: Float,
+    val startRotationDeg: Float,
     val restRotationDeg: Float,
     val startDelayMs: Long,
     val durationMs: Int,
