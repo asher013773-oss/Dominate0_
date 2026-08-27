@@ -1,4 +1,4 @@
-package com.example.Novacut.ui
+package com.example.novacut.ui
 
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
