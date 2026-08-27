@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 
-// Fast-out, slow-in style curve: steep at the start, flattens toward the end.
 private val FastThenSlow = CubicBezierEasing(0f, 0f, 0.2f, 1f)
 
 private enum class SquircleSize(val dp: Int) {
@@ -33,21 +32,14 @@ private enum class SquircleSize(val dp: Int) {
 
 private data class SquircleSpec(
     val size: SquircleSize,
-    val restingXFraction: Float,   // 0f..1f position across the container width
-    val restingYFraction: Float,   // 0f..1f position across the container height
-    val startRotationDeg: Float,
+    val restingXFraction: Float,
+    val restingYFraction: Float,
     val restRotationDeg: Float,
     val startDelayMs: Long,
     val durationMs: Int,
     val color: Color
 )
 
-/**
- * Renders inside a container that occupies 30% of the screen width.
- * Five squircles (mixed medium/large) slide in from offscreen-left and
- * rotate into place with a fast-then-slow easing, staggered so they
- * don't all land at once.
- */
 @Composable
 fun SlidingSpinningSquircles(modifier: Modifier = Modifier) {
     BoxWithConstraints(
@@ -59,10 +51,9 @@ fun SlidingSpinningSquircles(modifier: Modifier = Modifier) {
         val containerWidthPx = with(density) { maxWidth.toPx() }
         val containerHeightPx = with(density) { maxHeight.toPx() }
 
-        // Specs are created once and never regenerate on recomposition.
         val specs = remember {
             val palette = listOf(
-                Color(0xFF000000)
+                Color(0xFF000000),
                 Color(0xFF000000),
                 Color(0xFF000000),
                 Color(0xFF000000),
@@ -123,10 +114,9 @@ private fun AnimatedSquircle(
 
     val restingXPx = containerWidthPx * spec.restingXFraction
     val restingYPx = containerHeightPx * spec.restingYFraction
-    // Fully offscreen to the left: resting X minus its own width minus a margin.
     val offscreenXPx = -sizePx - 40f
 
-    val eased = progress.value // easing already baked into the tween
+    val eased = progress.value
     val currentX = offscreenXPx + (restingXPx - offscreenXPx) * eased
     val currentRotation = spec.startRotationDeg +
         (spec.restRotationDeg - spec.startRotationDeg) * eased
@@ -138,9 +128,9 @@ private fun AnimatedSquircle(
                 translationX = currentX
                 translationY = restingYPx
                 rotationZ = currentRotation
-                alpha = 0.15f + 0.15f * eased // subtle fade-in alongside the motion
+                alpha = 0.15f + 0.15f * eased
             }
-            .clip(RoundedCornerShape(30)) // squircle approximation
+            .clip(RoundedCornerShape(30))
             .background(spec.color)
     )
 }
