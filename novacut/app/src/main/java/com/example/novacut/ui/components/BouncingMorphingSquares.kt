@@ -49,9 +49,13 @@ fun BouncingMorphingSquares() {
 
         val squares = remember {
             listOf(
-                SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color.Green),
-                SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color.Cyan),
-                SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color(0xFFFF7043))
+                SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color.Black),
+                SquareState(0f, 0f, with(density) { 45.dp.toPx() }, Color.Black),
+                SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color.Black),
+                SquareState(0f, 0f, with(density) { 30.dp.toPx() }, Color.Black),
+                SquareState(0f, 0f, with(density) { 25.dp.toPx() }, Color.Black)
+            
+            
             ).onEach {
                 it.offsetX.updateBounds(0f, maxWidthPx - it.sizePx)
                 it.offsetY.updateBounds(0f, maxHeightPx - it.sizePx)
