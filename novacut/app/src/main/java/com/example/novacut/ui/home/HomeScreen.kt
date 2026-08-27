@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme 
-import com.example.novacut.ui.components.HomeTabRow
+import com.example.novacut.ui.components.HomeTabhRow
 
 
 @Composable
@@ -69,7 +69,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 SlidingSpinningSquircles()
 
                 Column(modifier = Modifier.fillMaxSize()) {
-                    HomeTabRow(
+                    HomeTabh(
                         selectedTab = selectedTab,
                         onTabSelected = { selectedTab = it }
                     )
