@@ -21,6 +21,8 @@ import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.animation.core.VectorConverter
 
 data class Seg(val start: Offset, val end: Offset)
 
@@ -81,7 +83,7 @@ val glyphs: Map<Char, List<Seg>> = mapOf(
         Seg(Offset(1f, 0f), Offset(1f, 0.4f)),
         Seg(Offset(1f, 0.4f), Offset(0.4f, 0f)),
         Seg(Offset(1f, 0.4f), Offset(1f, 0.8f)),
-        Seg(Offset(1f, 0.8f), Offset(0.7f, 0.f8))
+        Seg(Offset(1f, 0.8f), Offset(0.7f, 0.8f))
     ),
    't' to listOf(
         Seg(Offset(0f, 0f), Offset(0f, 1f)),
