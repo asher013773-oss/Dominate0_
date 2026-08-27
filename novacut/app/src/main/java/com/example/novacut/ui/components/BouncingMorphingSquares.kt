@@ -25,6 +25,9 @@ import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 import kotlin.random.Random
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.delay
 
 private const val MAX_LEVEL = 2 
 
