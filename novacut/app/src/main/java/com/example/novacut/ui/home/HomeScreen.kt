@@ -30,6 +30,7 @@ import com.example.novacut.ui.components.HomeTab
 import com.example.novacut.ui.components.HomeTabRow
 import com.example.novacut.ui.components.LineFormedTitle
 import com.example.novacut.ui.components.SlidingSpinningSquircles
+import com.example.novacut.ui.theme.novacutTheme 
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
