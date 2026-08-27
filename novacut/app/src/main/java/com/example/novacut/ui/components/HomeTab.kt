@@ -1,4 +1,4 @@
-package com.example.novacut.ui
+package com.example.Novacut.ui
 
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
@@ -33,13 +33,13 @@ fun HomeTabRow(
         edgePadding = 16.dp,
         indicator = { tabPositions ->
             if (selectedIndex < tabPositions.size) {
-                TabRowDefaults.PrimaryIndicator(
+                TabRowDefaults.Indicator(
                     modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
                     color = Color.White
                 )
             }
         },
-        divider = {} // skip default divider, it'll fight visually with the blob layer
+        divider = {}
     ) {
         tabs.forEach { tab ->
             Tab(
