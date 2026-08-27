@@ -25,7 +25,6 @@ import kotlin.random.Random
 data class Seg(val start: Offset, val end: Offset)
 
 val glyphs: Map<Char, List<Seg>> = mapOf(
-What would this do
     'A' to listOf(
         Seg(Offset(0.5f, 0f), Offset(0f, 1f)),
         Seg(Offset(0.5f, 0f), Offset(1f, 1f)),
@@ -44,10 +43,10 @@ What would this do
         Seg(Offset(0f, 0.5f), Offset(0f, 1f)),
         Seg(Offset(0f, 1f), Offset(1f, 1f)),
         Seg(Offset(1f, 1f), Offset(1f, 0.5f)),
-        Seg(Offset(1f,0.5f), Offset(0f,0.5))
+        Seg(Offset(1f,0.5f), Offset(0f,0.5f))
     ),
     'a' to listOf(
-        Seg(Offset(0f, 0.4f), Offset(0f, 0.7)),
+        Seg(Offset(0f, 0.4f), Offset(0f, 0.7f)),
         Seg(Offset(0f, 0.4f), Offset(1f, 0.4f)),
         Seg(Offset(1f, 0.4f), Offset(1f, 0.7)),
         Seg(Offset(1f, 0.7f), Offset(0f, 0.7f))    
@@ -82,7 +81,7 @@ What would this do
         Seg(Offset(1f, 0f), Offset(1f, 0.4f)),
         Seg(Offset(1f, 0.4f), Offset(0.4f, 0f)),
         Seg(Offset(1f, 0.4f), Offset(1f, 0.8f)),
-        Seg(Offset(1f, 0.8f), Offset(0.7, 0.8))
+        Seg(Offset(1f, 0.8f), Offset(0.7f, 0.f8))
     ),
    't' to listOf(
         Seg(Offset(0f, 0f), Offset(0f, 1f)),
@@ -124,7 +123,7 @@ fun buildWordSegments(
             cursorX += spaceWidthPx
             continue
         }
-        val letterSegs = glyphs ?: emptyList()
+        val letterSegs = glyphs[c] ?: emptyList()
         for (seg in letterSegs) {
             val finalStart = Offset(
                 cursorX + seg.start.x * letterSizePx,
