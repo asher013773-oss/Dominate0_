@@ -27,6 +27,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme 
+import com.example.novacut.ui.components.HomeTabRow
+
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
