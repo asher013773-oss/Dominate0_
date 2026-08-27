@@ -1,4 +1,4 @@
-package com.novacut.ui.components
+package com.example.novacut.ui.components
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector2D
@@ -50,7 +50,7 @@ val glyphs: Map<Char, List<Seg>> = mapOf(
     'a' to listOf(
         Seg(Offset(0f, 0.4f), Offset(0f, 0.7f)),
         Seg(Offset(0f, 0.4f), Offset(1f, 0.4f)),
-        Seg(Offset(1f, 0.4f), Offset(1f, 0.7)),
+        Seg(Offset(1f, 0.4f), Offset(1f, 0.7f)),
         Seg(Offset(1f, 0.7f), Offset(0f, 0.7f))    
     ),
     'R' to listOf(
