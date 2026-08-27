@@ -25,11 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import com.example.novacut.ui.components.BouncingMorphingSquares
-import com.example.novacut.ui.components.HomeTab
-import com.example.novacut.ui.components.HomeTabRow
-import com.example.novacut.ui.components.LineFormedTitle
-import com.example.novacut.ui.components.SlidingSpinningSquircles
+import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme 
 
 @Composable
