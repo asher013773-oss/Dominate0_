@@ -27,9 +27,8 @@ import kotlin.math.sqrt
 import kotlin.random.Random
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
-import kotlinx.coroutines.delay
 
-private const val MAX_LEVEL = 2 
+private const val MAX_LEVEL = 2
 
 private class SquareState(
     startX: Float,
@@ -41,7 +40,8 @@ private class SquareState(
     val offsetY = Animatable(startY)
     val cornerPercent = Animatable(0f) // 0 = square, 50 = circle
     var level = 0
-    var touching = false 
+    var touching = false
+}
 
 @Composable
 fun BouncingMorphingSquares() {
@@ -57,8 +57,6 @@ fun BouncingMorphingSquares() {
                 SquareState(0f, 0f, with(density) { 50.dp.toPx() }, Color.Black),
                 SquareState(0f, 0f, with(density) { 30.dp.toPx() }, Color.Black),
                 SquareState(0f, 0f, with(density) { 25.dp.toPx() }, Color.Black)
-            
-            
             ).onEach {
                 it.offsetX.updateBounds(0f, maxWidthPx - it.sizePx)
                 it.offsetY.updateBounds(0f, maxHeightPx - it.sizePx)
