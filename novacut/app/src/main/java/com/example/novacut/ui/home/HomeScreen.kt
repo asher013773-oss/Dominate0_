@@ -26,8 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.example.novacut.ui.components.*
-import com.example.novacut.ui.theme.novacutTheme 
-import com.example.novacut.ui.components.HomeTabhRow
+import com.example.novacut.ui.theme.novacutTheme
 
 
 @Composable
