@@ -50,30 +50,24 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
+            .background(blendedColor)
     ) {
+        
+        Box(modifier = Modifier.fillMaxSize()) {
+            BouncingMorphingSquares()
+            LineFormedTitle()
+            SlidingSpinningSquircles()
+        }
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
-                .background(blendedColor)
         ) {
-
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-            ) {
-                BouncingMorphingSquares()
-                LineFormedTitle()
-                SlidingSpinningSquircles()
-
-                Column(modifier = Modifier.fillMaxSize()) {
-                    HomeTabRow(
-                        selectedTab = selectedTab,
-                        onTabSelected = { selectedTab = it }
-                    )
-                }
-            }
+            HomeTabRow(
+                selectedTab = selectedTab,
+                onTabSelected = { selectedTab = it }
+            )
         }
     }
 }
