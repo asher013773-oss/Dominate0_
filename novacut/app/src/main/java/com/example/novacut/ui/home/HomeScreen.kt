@@ -68,7 +68,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 SlidingSpinningSquircles()
 
                 Column(modifier = Modifier.fillMaxSize()) {
-                    HomeTabh(
+                    HomeTabRow(
                         selectedTab = selectedTab,
                         onTabSelected = { selectedTab = it }
                     )
