@@ -33,6 +33,7 @@ import com.example.novacut.ui.theme.novacutTheme
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
 
+    var squirclesHeightPx by remember { mutableStateOf(0)
     val infiniteTransition = rememberInfiniteTransition(label = "ColorLoop")
 
     val blendedColor by infiniteTransition.animateColor(
@@ -52,6 +53,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .background(blendedColor)
+            .onGloballyPositioned { coords ->
+                    squirclesHeightPx = coords.size.height
     ) {
         
         Box(modifier = Modifier.fillMaxSize()) {
@@ -62,7 +65,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .statusBarsPadding()
+                .padding(top = with(LocalDensity.current) { squirclesHeightPx.toDp() })
                 .verticalScroll(rememberScrollState())
         ) {
             HomeTabRow(
