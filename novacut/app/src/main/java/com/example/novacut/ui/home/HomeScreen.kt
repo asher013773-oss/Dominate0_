@@ -14,6 +14,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -24,7 +25,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.statusBarsPadding
 import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme
@@ -33,7 +37,7 @@ import com.example.novacut.ui.theme.novacutTheme
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
 
-    var squirclesHeightPx by remember { mutableStateOf(0)
+    var squirclesHeightPx by remember { mutableStateOf(0) }
     val infiniteTransition = rememberInfiniteTransition(label = "ColorLoop")
 
     val blendedColor by infiniteTransition.animateColor(
@@ -54,9 +58,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(blendedColor)
             .onGloballyPositioned { coords ->
-                    squirclesHeightPx = coords.size.height
+                squirclesHeightPx = coords.size.height
+            }
     ) {
-        
+
         Box(modifier = Modifier.fillMaxSize()) {
             LineFormedTitle()
             SlidingSpinningSquircles()
