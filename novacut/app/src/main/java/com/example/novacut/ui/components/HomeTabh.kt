@@ -1,6 +1,6 @@
 package com.example.novacut.ui.components
 
-import androidx.compose.material3.ScrollableTabRow
+import androidx.compose.material3.SecondaryScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
@@ -23,7 +23,7 @@ fun HomeTabRow(
     modifier: Modifier = Modifier
 ) {
     val tabs = HomeTab.entries
-    val selectedIndex = tabs.indexOf(selectedTab)
+    val selectedTabIndex = tabs.indexOf(selectedTab)
 
     SecondaryScrollableTabRow(
     selectedTabIndex = selectedTabIndex,
@@ -34,6 +34,7 @@ fun HomeTabRow(
             selected = selectedTabIndex == index,
             onClick = { onTabSelected(tab) },
             text = { Text(tab.label) }
-        )
+            )
+        }
     }
-    }
+}
