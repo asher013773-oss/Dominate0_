@@ -188,12 +188,12 @@ fun LineFormedTitle(
         val widthPx = with(density) { maxWidth.toPx() }
         val heightPx = with(density) { maxHeight.toPx() }
 
-        val letterSizePx = with(density) { 32.dp.toPx() }
+        val letterSizePx = with(density) { 23.dp.toPx() }
         val letterSpacingPx = with(density) { 8.dp.toPx() }
         val spaceWidthPx = with(density) { 20.dp.toPx() }
         val lineHeightPx = with(density) { 56.dp.toPx() }
         val paddingTopPx = with(density) { 48.dp.toPx() }
-        val paddingRightPx = with(density) { 24.dp.toPx() }
+        val paddingRightPx = with(density) { 25.dp.toPx() }
 
         val topRightAnchor = remember(widthPx, heightPx) {
             Offset(widthPx - paddingRightPx, paddingTopPx)
