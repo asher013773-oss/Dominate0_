@@ -36,7 +36,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     val blendedColor by infiniteTransition.animateColor(
         initialValue = Color(0xFFD9F4DA),
-        targetValue = Color(0xFFFFFFFF)
+        targetValue = Color(0xFFFFFFFF),
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = 8000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
