@@ -25,28 +25,15 @@ fun HomeTabRow(
     val tabs = HomeTab.entries
     val selectedIndex = tabs.indexOf(selectedTab)
 
-    ScrollableTabRow(
-        selectedTabIndex = selectedIndex,
-        modifier = modifier,
-        containerColor = Color.Transparent,
-        contentColor = Color.White,
-        edgePadding = 16.dp,
-        indicator = { tabPositions ->
-            if (selectedIndex < tabPositions.size) {
-                TabRowDefaults.Indicator(
-                    modifier = Modifier.tabIndicatorOffset(tabPositions[selectedIndex]),
-                    color = Color.White
-                )
-            }
-        },
-        divider = {}
-    ) {
-        tabs.forEach { tab ->
-            Tab(
-                selected = selectedTab == tab,
-                onClick = { onTabSelected(tab) },
-                text = { Text(tab.label) }
-            )
-        }
+    SecondaryScrollableTabRow(
+    selectedTabIndex = selectedTabIndex,
+    edgePadding = 0.dp
+) {
+    tabs.forEachIndexed { index, tab ->
+        Tab(
+            selected = selectedTabIndex == index,
+            onClick = { onTabSelected(tab) },
+            text = { Text(tab.label) }
+        )
     }
-}
+    }
