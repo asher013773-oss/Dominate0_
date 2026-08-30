@@ -70,5 +70,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     HomeTabRow(
         selectedTab = selectedTab,
         onTabSelected = { selectedTab = it }
-    )
+        )
+    }
 }
