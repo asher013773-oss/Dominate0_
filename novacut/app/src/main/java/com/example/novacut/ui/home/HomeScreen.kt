@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.statusBarsPadding
 import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme
-
+import androidx.compose.foundation.layout.Arrangement
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -57,20 +57,19 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .background(blendedColor)
-            .onGloballyPositioned { coords ->
-                squirclesHeightPx = coords.size.height
-            }
     ) {
 
-        Box(modifier = Modifier.fillMaxSize()) {
-            LineFormedTitle()
-            SlidingSpinningSquircles()
-        }
+        Column(
+    modifier = Modifier.fillMaxSize(),
+    verticalArrangement = Arrangement.spacedBy(16.dp)
+) {
+    AnimatedWords()
+    SlidingSpinningSquircles()
+}
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = with(LocalDensity.current) { squirclesHeightPx.toDp() })
                 .verticalScroll(rememberScrollState())
         ) {
             HomeTabRow(
