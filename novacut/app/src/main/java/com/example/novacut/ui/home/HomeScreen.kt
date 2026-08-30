@@ -37,7 +37,6 @@ import androidx.compose.foundation.layout.Arrangement
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
 
-    var squirclesHeightPx by remember { mutableStateOf(0) }
     val infiniteTransition = rememberInfiniteTransition(label = "ColorLoop")
 
     val blendedColor by infiniteTransition.animateColor(
@@ -60,22 +59,16 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     ) {
 
         Column(
-    modifier = Modifier.fillMaxSize(),
+    modifier = Modifier
+        .fillMaxSize()
+        .statusBarsPadding()
+        .verticalScroll(rememberScrollState()),
     verticalArrangement = Arrangement.spacedBy(16.dp)
 ) {
     AnimatedTwoWords()
     SlidingSpinningSquircles()
-}
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState())
-        ) {
-            HomeTabRow(
-                selectedTab = selectedTab,
-                onTabSelected = { selectedTab = it }
-            )
-        }
-    }
+    HomeTabRow(
+        selectedTab = selectedTab,
+        onTabSelected = { selectedTab = it }
+    )
 }
