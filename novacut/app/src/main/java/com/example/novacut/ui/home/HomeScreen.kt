@@ -42,9 +42,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     val blendedColor by infiniteTransition.animateColor(
         initialValue = Color(0xFFD9F4DA),
-        targetValue = Color(0xFFFFFFFF),
+        targetValue = Color(0xFF81C784),
         animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 8000, easing = LinearEasing),
+            animation = tween(durationMillis = 11000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
         ),
         label = "ColorBlend"
