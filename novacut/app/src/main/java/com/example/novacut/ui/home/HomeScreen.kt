@@ -63,7 +63,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     modifier = Modifier.fillMaxSize(),
     verticalArrangement = Arrangement.spacedBy(16.dp)
 ) {
-    AnimatedWords()
+    AnimatedTwoWords()
     SlidingSpinningSquircles()
 }
 
