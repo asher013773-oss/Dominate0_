@@ -59,17 +59,18 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     ) {
 
         Column(
-    modifier = Modifier
-        .fillMaxSize()
-        .statusBarsPadding()
-        .verticalScroll(rememberScrollState()),
-    verticalArrangement = Arrangement.spacedBy(16.dp)
-) {
-    AnimatedTwoWords()
-    SlidingSpinningSquircles()
-    HomeTabRow(
-        selectedTab = selectedTab,
-        onTabSelected = { selectedTab = it }
-        )
+            modifier = Modifier
+                .fillMaxSize()
+                .statusBarsPadding()
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            AnimatedTwoWords()
+            SlidingSpinningSquircles()
+            HomeTabRow(
+                selectedTab = selectedTab,
+                onTabSelected = { selectedTab = it }
+            )
+        }
     }
 }
