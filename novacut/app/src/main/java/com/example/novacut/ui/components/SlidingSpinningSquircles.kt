@@ -26,8 +26,8 @@ import kotlin.random.Random
 private val FastThenSlow = CubicBezierEasing(0f, 0f, 0.2f, 1f)
 
 private enum class SquircleSize(val dp: Int) {
-    MEDIUM(57),
-    LARGE(35)
+    MEDIUM(68),
+    LARGE(41)
 }
 
 private data class SquircleSpec(
@@ -46,7 +46,7 @@ fun SlidingSpinningSquircles(modifier: Modifier = Modifier) {
     BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
-            .fillMaxHeight(0.3f)
+            .fillMaxHeight(240.dp)
     ) {
         val density = LocalDensity.current
         val containerWidthPx = with(density) { maxWidth.toPx() }
@@ -129,7 +129,7 @@ private fun AnimatedSquircle(
                 translationX = currentX
                 translationY = restingYPx
                 rotationZ = currentRotation
-                alpha = 0.15f + 0.15f * eased
+                alpha = 0.7f + 0.4f * eased
             }
             .clip(RoundedCornerShape(30))
             .background(spec.color)
