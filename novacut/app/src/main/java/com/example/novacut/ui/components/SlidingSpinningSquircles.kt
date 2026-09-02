@@ -46,7 +46,7 @@ fun SlidingSpinningSquircles(modifier: Modifier = Modifier) {
     BoxWithConstraints(
         modifier = modifier
             .fillMaxWidth()
-            .fillMaxHeight(240f)
+            .fillMaxHeight()
     ) {
         val density = LocalDensity.current
         val containerWidthPx = with(density) { maxWidth.toPx() }
