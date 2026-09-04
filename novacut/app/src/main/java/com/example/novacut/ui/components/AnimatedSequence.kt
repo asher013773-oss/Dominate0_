@@ -1,5 +1,5 @@
 @Composable
-fun DrawingLine() {
+fun AnimatedSequence() {
     val progress = remember { Animatable(0f) }
 
     LaunchedEffect(Unit) {
@@ -29,7 +29,18 @@ fun DrawingLine() {
         endX, endY
     )
 }
+     val produce = path.forEachIndexed(
+         path[0].value + path - path[0].value * progress.value
 
+       for (i in 0 until path.lastIndex) {
+    drawLine(
+        start = points[i],
+        end = produce,
+        color = Color.Black,
+        strokeWidth = 8f
+    )
+       }
+     
         drawLine(
             color = Color.Black,
             start = start,
