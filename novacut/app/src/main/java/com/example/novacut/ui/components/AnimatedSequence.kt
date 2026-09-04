@@ -29,23 +29,20 @@ fun AnimatedSequence() {
         endX, endY
     )
 }
-     val produce = path.forEachIndexed(
-         path[0].value + path - path[0].value * progress.value
+     val pathMeasure = PathMeasure()
+        pathMeasure.setPath(path, false)
+        val animatedPath = Path()
+        pathMeasure.getSegment(
+            0f,
+            pathMeasure.length * progress.value,
+            animatedPath,
+            true
+        )
 
-       for (i in 0 until path.lastIndex) {
-    drawLine(
-        start = points[i],
-        end = produce,
-        color = Color.Black,
-        strokeWidth = 8f
-    )
-       }
-     
-        drawLine(
+        drawPath(
+            path = animatedPath,
             color = Color.Black,
-            start = start,
-            end = currentEnd,
-            strokeWidth = 8f
+            style = Stroke(width = 8f)
         )
     }
 }
