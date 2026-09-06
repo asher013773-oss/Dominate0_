@@ -41,6 +41,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     val configuration = LocalConfiguration.current
     val squirclesHeight = (configuration.screenHeightDp * 0.3f).dp
+    val caucaPos = (configuration.screenHeightDp * 0.3f).dp
 
     val infiniteTransition = rememberInfiniteTransition(label = "ColorLoop")
 
