@@ -186,5 +186,5 @@ fun AnimatedTwoWords(
             word = word2,
             startDelay = word1.length * 40L + 200L
         )
-
-    
+    }
+}
