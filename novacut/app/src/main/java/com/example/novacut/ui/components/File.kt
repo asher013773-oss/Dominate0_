@@ -64,21 +64,6 @@ fun AnimatedWord(
 }
 
 @Composable
-fun AnimatedTwoWords(
-    word1: String = "Aurora",
-    word2: String = "Reinvigorate",
-    modifier: Modifier = Modifier
-) {
-    Column(modifier = modifier) {
-        AnimatedWord(word = word1)
-        AnimatedWord(
-            word = word2,
-            startDelay = word1.length * 40L + 200L
-        )
-    }
-}
-
-@Composable
 fun AnimatedSequence() {
     val progress = remember { Animatable(0f) }
 
@@ -127,3 +112,79 @@ fun AnimatedSequence() {
     }
 }
 
+@Composable
+fun Jitters(modifier: Modifier = Modifier) {
+    val progress = remember { Animatable(0f) }
+    LaunchedEffect(Unit) {
+        progress.animateTo(
+            targetValue = 1f,
+            animationSpec = tween(5000)
+        )
+    }
+
+    val text = "spatial experiment"
+    val words = text.split(" ")
+
+    val jitters = remember {
+        words[0].map {
+            Offset(
+                x = Random.nextFloat() * 10f - 5f,
+                y = Random.nextFloat() * 10f - 5f
+            )
+        }
+    }
+
+    val jatters = remember {
+        words[1].map {
+            Offset(
+                x = Random.nextFloat() * 10f - 5f,
+                y = Random.nextFloat() * 10f - 5f
+            )
+        }
+    }
+
+    Box(modifier = modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier.offset(caucaPos.x, caucaPos.y)
+    ) {
+        Row {
+            words[0].forEachIndexed { index, char ->
+                Text(
+                    text = char.toString(),
+                    style = MaterialTheme.typography.displaySmall,
+                    modifier = Modifier.offset(
+                        x = (jitters[index].x * progress.value).dp,
+                        y = (jitters[index].y * progress.value).dp
+                    )
+                )
+            }
+        }
+        Row {
+            words[1].forEachIndexed { index, char ->
+                Text(
+                    text = char.toString(),
+                    style = MaterialTheme.typography.displaySmall,
+                    modifier = Modifier.offset(
+                        x = (jatters[index].x * progress.value).dp,
+                        y = (jatters[index].y * progress.value).dp
+                    )
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun AnimatedTwoWords(
+    word1: String = "Aurora",
+    word2: String = "Reinvigorate",
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        AnimatedWord(word = word1)
+        AnimatedWord(
+            word = word2,
+            startDelay = word1.length * 40L + 200L
+        )
+
+    
