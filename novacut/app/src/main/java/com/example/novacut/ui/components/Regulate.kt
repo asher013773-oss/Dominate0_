@@ -113,7 +113,7 @@ fun AnimatedSequence() {
 }
 
 @Composable
-fun Jitters(modifier: Modifier = Modifier) {
+fun Jitterh(modifier: Modifier = Modifier) {
     val progress = remember { Animatable(0f) }
     LaunchedEffect(Unit) {
         progress.animateTo(
@@ -175,10 +175,11 @@ fun Jitters(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun AnimatedTwoWords(
-    word1: String = "Aurora",
-    word2: String = "Reinvigorate",
-    modifier: Modifier = Modifier
+fun AnimatedLetters(
+    LaunchedEffect (Unit) {
+        word1: String = "Aurora",
+        word2: String = "Reinvigorate",
+        modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
         AnimatedWord(word = word1)
@@ -188,3 +189,7 @@ fun AnimatedTwoWords(
         )
     }
 }
+delay(246L)
+AnimatedSequence()
+delay(1000)
+Jitterh()
