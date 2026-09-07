@@ -43,25 +43,13 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     val squirclesHeight = (configuration.screenHeightDp * 0.3f).dp
     val caucaPos = (configuration.screenHeightDp * 0.3f).dp
 
-    val infiniteTransition = rememberInfiniteTransition(label = "ColorLoop")
-
-    val blendedColor by infiniteTransition.animateColor(
-        initialValue = Color(0xFFD9F4DA),
-        targetValue = Color(0xFF81C784),
-        animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 11000, easing = LinearEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "ColorBlend"
-    )
-
     var selectedTab by remember { mutableStateOf(HomeTab.EDITS) }
     val context = LocalContext.current
 
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(blendedColor)
+            .background(Color(0xFFF2FFF5))
     ) {
 
         Column(
@@ -71,7 +59,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            AnimatedTwoWords()
+            AnimatedLetters(modifier = Modifier.height(SequenceHeight))
             SlidingSpinningSquircles(modifier = Modifier.height(squirclesHeight))
             HomeTabRow(
                 selectedTab = selectedTab,
