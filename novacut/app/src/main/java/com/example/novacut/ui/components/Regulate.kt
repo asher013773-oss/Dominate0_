@@ -189,7 +189,7 @@ fun AnimatedLetters(
         )
     }
 }
-delay(246L)
+delay(248L)
 AnimatedSequence()
 delay(1000)
 Jitterh()
