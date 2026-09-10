@@ -18,6 +18,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.graphics.drawscope.Canvas 
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.PathMeasure
+
+val squirclesHeight = (configuration.screenHeightDp * 0.3f).dp
+val caucaPos = (configuration.screenHeightDp * 0.3f).dp
 
 @Composable
 fun AnimatedWord(
@@ -58,6 +70,7 @@ fun AnimatedWord(
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
+                )
             )
         }
     }
