@@ -41,7 +41,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     val configuration = LocalConfiguration.current
     val squirclesHeight = (configuration.screenHeightDp * 0.3f).dp
-    val caucaPos = (configuration.screenHeightDp * 0.3f).dp
+    val SequenceHeight = (configuration.screenHeightDp * 0.2f).dp
 
     var selectedTab by remember { mutableStateOf(HomeTab.EDITS) }
     val context = LocalContext.current
