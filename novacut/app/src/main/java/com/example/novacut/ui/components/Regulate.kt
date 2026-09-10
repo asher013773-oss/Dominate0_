@@ -27,6 +27,10 @@ import androidx.compose.ui.graphics.drawscope.Canvas
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.PathMeasure
+import androidx.compose.ui.unit.offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material.Text
+import kotlinx.coroutines.delay
 
 val squirclesHeight = (configuration.screenHeightDp * 0.3f).dp
 val caucaPos = (configuration.screenHeightDp * 0.3f).dp
