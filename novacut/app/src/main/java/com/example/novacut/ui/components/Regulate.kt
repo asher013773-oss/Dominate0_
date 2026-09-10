@@ -48,7 +48,7 @@ fun AnimatedWord(
         }
     }
 
-    Row(modifier = modifier
+    Row(modifier = Modifier
        .padding(end = 8.dp)
        .onGloballyPositioned { coordinates -> val coordinates = coordinates.size} {
         letters.forEachIndexed { i, c ->
@@ -188,8 +188,8 @@ fun AnimatedLetters(
             startDelay = word1.length * 40L + 200L
         )
     }
-}
 delay(248L)
 AnimatedSequence()
 delay(1000)
 Jitterh()
+}
