@@ -34,7 +34,18 @@ fun AnimatedWord(
         .padding(end = 8.dp)
         .offset(x = positionx, y = positiony) {
             Row{
-                letters.forEachIndexed { i, c ->
+                letters.take(5).forEachIndexed { i, c ->
+                    Text(
+                        text = c.toString(),
+                        style = MaterialTheme.typography.headlineMedium,
+                        modifier = Modifier
+                       .offset(x = offsets[i].value.dp)
+                       .alpha(alphas[i].value)
+            )
+        }
+    }
+            Row{
+                letters.take(5).forEachIndexed { i, c ->
                     Text(
                         text = c.toString(),
                         style = MaterialTheme.typography.headlineMedium,
