@@ -4,6 +4,9 @@ import androidx.compose.material3.Card
 import androidx.compose.ui.graphics.drawscope.drawCircle
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material3.MaterialTheme
 
 Card (
   shape = RoundedCornerShape(16.dp),
@@ -79,5 +82,12 @@ fun DustEffect(
             )
         }
     }
+
+Row(modifier = Modifier
+    .offset(x = maxWidth * 0.9, y = maxHeight * 0.9)
+    ) {
+  Text(
+    text = "Pro?"
+    style = MaterialTheme.typography.headlineMedium
+    )
 }
-        
