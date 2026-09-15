@@ -69,30 +69,31 @@ fun AnimatedWord(
         }
     }
 
-    Column(modifier = Modifier
+    Column(
+    modifier = Modifier
         .padding(end = 8.dp)
-        .offset(x = positionx, y = positiony)) {
-            Row{
-                letters.take(6).forEachIndexed { i, c ->
-                    Text(
-                        text = c.toString(),
-                        style = MaterialTheme.typography.headlineMedium,
-                        modifier = Modifier
-                       .offset(x = offsets[i].value.dp)
-                       .alpha(alphas[i].value)
-                )
+        .offset(x = positionx, y = positiony)
+) {
+    Row {
+        letters.take(6).forEachIndexed { i, c ->
+            Text(
+                text = c.toString(),
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier
+                    .offset(x = offsets[i].value.dp)
+                    .alpha(alphas[i].value)
             )
         }
     }
-            Row{
-                letters.take(12).forEachIndexed { i, c ->
-                    Text(
-                        text = c.toString(),
-                        style = MaterialTheme.typography.headlineMedium,
-                        modifier = Modifier
-                       .offset(x = offsets[i].value.dp)
-                       .alpha(alphas[i].value)
-                )
+}
+            Row {
+        letters.take(12).forEachIndexed { i, c ->
+            Text(
+                text = c.toString(),
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier
+                    .offset(x = offsets[i].value.dp)
+                    .alpha(alphas[i].value)
             )
         }
     }
