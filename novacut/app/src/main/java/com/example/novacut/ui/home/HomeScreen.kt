@@ -59,8 +59,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            AnimatedTitleSequence(modifier = Modifier.height(SequenceHeight))
-            SlidingSpinningSquircles(modifier = Modifier.height(squirclesHeight))
+            AnimatedWord()
+            Wait()
             HomeTabRow(
                 selectedTab = selectedTab,
                 onTabSelected = { selectedTab = it }
