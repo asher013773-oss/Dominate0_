@@ -34,6 +34,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 
 @Composable
 fun JustHere() {
@@ -74,7 +76,7 @@ fun DustEffect(
                 radius = Random.nextFloat() * 3f + 1f,
                 alpha = Random.nextFloat() * 0.5f + 0.2f
                 )
-            )
+            }
         }
     }
 
