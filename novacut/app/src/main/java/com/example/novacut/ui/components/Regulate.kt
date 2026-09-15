@@ -35,6 +35,7 @@ import androidx.compose.ui.text.font.FontStyle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.animation.core.Spring
+import androidx.compose.ui.draw.alpha
 
 @Composable
 fun AnimatedWord(
@@ -91,6 +92,7 @@ fun AnimatedWord(
                         modifier = Modifier
                        .offset(x = offsets[i].value.dp)
                        .alpha(alphas[i].value)
+                )
             )
         }
     }
