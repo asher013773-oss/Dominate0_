@@ -34,7 +34,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.Spring
 
 @Composable
 fun AnimatedWord(
@@ -70,9 +70,9 @@ fun AnimatedWord(
 
     Column(modifier = Modifier
         .padding(end = 8.dp)
-        .offset(x = positionx, y = positiony) {
+        .offset(x = positionx, y = positiony)) {
             Row{
-                letters.take(5).forEachIndexed { i, c ->
+                letters.take(6).forEachIndexed { i, c ->
                     Text(
                         text = c.toString(),
                         style = MaterialTheme.typography.headlineMedium,
@@ -84,7 +84,7 @@ fun AnimatedWord(
         }
     }
             Row{
-                letters.take(5).forEachIndexed { i, c ->
+                letters.take(12).forEachIndexed { i, c ->
                     Text(
                         text = c.toString(),
                         style = MaterialTheme.typography.headlineMedium,
