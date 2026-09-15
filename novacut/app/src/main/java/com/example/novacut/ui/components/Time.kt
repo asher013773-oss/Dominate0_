@@ -32,9 +32,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.platform.LocalConfiguration
 
 @Composable
-Card (
-  shape = RoundedCornerShape(16.dp),
-  elevation = CardDefaults.cardElevation(
+fun justhere() {
+  Card (
+      shape = RoundedCornerShape(16.dp),
+      elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp,
             pressedElevation = 2.dp
         )
