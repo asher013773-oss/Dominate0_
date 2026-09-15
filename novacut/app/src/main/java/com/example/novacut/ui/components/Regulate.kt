@@ -1,15 +1,29 @@
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.Composable
-import kotlin.random.Random
-import androidx.compose.ui.Modifier
-import androidx.compose.runtime.remember
-import kotlinx.coroutines.delay
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.animation.core.Animatable
+import androidx.compose.ui.unit.dp
+
 import androidx.compose.animation.core.spring
-import androidx.compose.ui.unit.Dp
-import androidx.compose.foundation.layout.Row
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.launch
+import androidx.compose.animation.core.animateTo
+
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.delay
+import androidx.compose.runtime.remember
+
+import kotlin.random.Random
+
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.drawscope.DrawScope
 
 @Composable
 fun AnimatedWord(
