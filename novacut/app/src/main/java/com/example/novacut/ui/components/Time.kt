@@ -26,8 +26,10 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.material3.RoundedCornerShape
+import androidx.compose.ui.draw.clip 
 import kotlinx.coroutines.delay
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.platform.LocalConfiguration
 
 @Composable
 Card (
