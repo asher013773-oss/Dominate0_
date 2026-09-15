@@ -30,9 +30,13 @@ import androidx.compose.ui.draw.clip
 import kotlinx.coroutines.delay
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.Fill
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.TextStyle
 
 @Composable
-fun justhere() {
+fun JustHere() {
   Card (
       shape = RoundedCornerShape(16.dp),
       elevation = CardDefaults.cardElevation(
@@ -94,7 +98,8 @@ fun DustEffect(
         }
     }
 
-    Canvas(modifier = modifier.fillMaxSize()) ) {
+    fun Wait() { 
+      Canvas(modifier = modifier.fillMaxSize()) ) {
         @Suppress("UNUSED_EXPRESSION") frameTime
 
         val w = maxWidth
