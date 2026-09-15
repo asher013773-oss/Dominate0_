@@ -86,7 +86,7 @@ fun AnimatedWord(
         }
     }
 }
-            Row {
+    Row {
         letters.take(12).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
