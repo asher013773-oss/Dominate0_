@@ -59,7 +59,11 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            AnimatedWord()
+            AnimatedWord(
+                word: "Aurora Reinvigorate"
+                startDelay: Long = 100L,
+                modifier: Modifier = Modifier
+            ) {
             Wait()
             HomeTabRow(
                 selectedTab = selectedTab,
