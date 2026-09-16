@@ -60,15 +60,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             AnimatedWord(
-                word: "Aurora Reinvigorate"
-                startDelay: Long = 100L,
-                modifier: Modifier = Modifier
-            ) {
-            Wait()
-            HomeTabRow(
-                selectedTab = selectedTab,
-                onTabSelected = { selectedTab = it }
-            )
-        }
-    }
-}
+    word = "Aurora Reinvigorate",
+    startDelay = 100L,
+    modifier = Modifier
+)
+Wait()
+HomeTabRow(
+    selectedTab = selectedTab,
+    onTabSelected = { selectedTab = it }
+)
