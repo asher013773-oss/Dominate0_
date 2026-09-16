@@ -112,13 +112,13 @@ fun DustEffect(
                 center = Offset(p.x * w, p.y * h)
             )
         }
-    }
-
+        
 Row(modifier = Modifier
     .offset(x = maxWidth * 0.9, y = maxHeight * 0.9)
     ) {
   Text(
     text = "Pro?"
     style = MaterialTheme.typography.headlineMedium
-    )
+        )
+    }
 }
