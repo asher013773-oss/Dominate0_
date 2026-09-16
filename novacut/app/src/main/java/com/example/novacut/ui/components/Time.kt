@@ -37,11 +37,20 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
+data class DustParticle(
+    var x: Float,
+    var y: Float,
+    var vx: Float,
+    var vy: Float,
+    var radius: Float,
+    var alpha: Float
+)
+
 @Composable
 fun JustHere() {
-  Card (
-      shape = RoundedCornerShape(16.dp),
-      elevation = CardDefaults.cardElevation(
+    Card(
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(
             defaultElevation = 6.dp,
             pressedElevation = 2.dp
         )
@@ -51,15 +60,10 @@ fun JustHere() {
         ) {
             val boundWidth = maxWidth
             val boundHeight = maxHeight
-
-            data class DustParticle(
-                var x: Float,
-                var y: Float,
-                var vx: Float,
-                var vy: Float,
-                var radius: Float,
-                var alpha: Float
-)
+            DustEffect()
+        }
+    }
+}
 
 @Composable
 fun DustEffect(
@@ -67,19 +71,18 @@ fun DustEffect(
     particleCount: Int = 40
 ) {
     val particles = remember {
-    List(particleCount) {
-        DustParticle(
-            x = Random.nextFloat(),
-            y = Random.nextFloat(),
-            vx = (Random.nextFloat() - 0.5f) * 0.02f,
-            vy = (Random.nextFloat() - 0.5f) * 0.02f,
-            radius = Random.nextFloat() * 3f + 1f,
-            alpha = Random.nextFloat() * 0.5f + 0.2f
-        )
+        List(particleCount) {
+            DustParticle(
+                x = Random.nextFloat(),
+                y = Random.nextFloat(),
+                vx = (Random.nextFloat() - 0.5f) * 0.02f,
+                vy = (Random.nextFloat() - 0.5f) * 0.02f,
+                radius = Random.nextFloat() * 3f + 1f,
+                alpha = Random.nextFloat() * 0.5f + 0.2f
+            )
+        }
     }
-}
 
-    // single state value just to force recomposition of the Canvas each frame
     var frameTime by remember { mutableLongStateOf(0L) }
 
     LaunchedEffect(Unit) {
@@ -89,7 +92,6 @@ fun DustEffect(
                 for (p in particles) {
                     p.x += p.vx
                     p.y += p.vy
-                    // wrap around edges
                     if (p.x < 0f) p.x = 1f
                     if (p.x > 1f) p.x = 0f
                     if (p.y < 0f) p.y = 1f
@@ -99,28 +101,32 @@ fun DustEffect(
         }
     }
 
-@Composable
-fun Wait() { 
     Canvas(modifier = modifier.fillMaxSize()) {
-    @Suppress("UNUSED_EXPRESSION") frameTime
+        @Suppress("UNUSED_EXPRESSION") frameTime
 
-    for (p in particles) {
-        drawCircle(
-            color = Color.White.copy(alpha = p.alpha),
-            radius = p.radius,
-            center = Offset(p.x * size.width, p.y * size.height)
-        )
+        for (p in particles) {
+            drawCircle(
+                color = Color.White.copy(alpha = p.alpha),
+                radius = p.radius,
+                center = Offset(p.x * size.width, p.y * size.height)
+            )
+        }
     }
 }
-        
-        Row(modifier = Modifier
-            .offset(x = maxWidth * 0.9f, y = maxHeight * 0.9f)
-        ) {
-            Text(
-                text = "Pro?",
-                style = MaterialTheme.typography.headlineMedium
-                )
-            }
-        }
+
+@Composable
+AnimatedWord(
+    word: "Aurora Reinvigorate",
+    startDelay: Long = 100L,
+    modifier: Modifier = Modifier
+  }
+  
+@Composable
+fun Wait(modifier: Modifier = Modifier) {
+    Row(modifier = modifier) {
+        Text(
+            text = "Pro?",
+            style = MaterialTheme.typography.headlineMedium
+        )
     }
 }
