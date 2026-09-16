@@ -100,7 +100,7 @@ fun DustEffect(
     }
 
     fun Wait() { 
-      Canvas(modifier = modifier.fillMaxSize()) ) {
+      Canvas(modifier = modifier.fillMaxSize()) {
         @Suppress("UNUSED_EXPRESSION") frameTime
 
         val w = maxWidth
@@ -119,6 +119,7 @@ Row(modifier = Modifier
   Text(
     text = "Pro?"
     style = MaterialTheme.typography.headlineMedium
-        )
+           )
+        }
     }
 }
