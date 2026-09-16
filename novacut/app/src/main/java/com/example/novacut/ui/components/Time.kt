@@ -99,8 +99,9 @@ fun DustEffect(
         }
     }
 
-    fun Wait() { 
-      Canvas(modifier = modifier.fillMaxSize()) {
+@Composable
+fun Wait() { 
+    Canvas(modifier = modifier.fillMaxSize()) {
         @Suppress("UNUSED_EXPRESSION") frameTime
 
         val w = maxWidth
@@ -113,13 +114,13 @@ fun DustEffect(
             )
         }
         
-Row(modifier = Modifier
-    .offset(x = maxWidth * 0.9, y = maxHeight * 0.9)
-    ) {
-  Text(
-    text = "Pro?"
-    style = MaterialTheme.typography.headlineMedium
-           )
+        Row(modifier = Modifier
+            .offset(x = maxWidth * 0.9f, y = maxHeight * 0.9f)
+        ) {
+            Text(
+                text = "Pro?",
+                style = MaterialTheme.typography.headlineMedium
+            )
         }
     }
 }
