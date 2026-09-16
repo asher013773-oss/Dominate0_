@@ -119,7 +119,8 @@ fun Wait() {
             Text(
                 text = "Pro?",
                 style = MaterialTheme.typography.headlineMedium
-            )
+                )
+            }
         }
     }
 }
