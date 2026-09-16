@@ -102,17 +102,16 @@ fun DustEffect(
 @Composable
 fun Wait() { 
     Canvas(modifier = modifier.fillMaxSize()) {
-        @Suppress("UNUSED_EXPRESSION") frameTime
+    @Suppress("UNUSED_EXPRESSION") frameTime
 
-        val w = maxWidth
-        val h = maxHeight
-        for (p in particles) {
-            drawCircle(
-                color = Color.White.copy(alpha = p.alpha),
-                radius = p.radius,
-                center = Offset(p.x * w, p.y * h)
-            )
-        }
+    for (p in particles) {
+        drawCircle(
+            color = Color.White.copy(alpha = p.alpha),
+            radius = p.radius,
+            center = Offset(p.x * size.width, p.y * size.height)
+        )
+    }
+}
         
         Row(modifier = Modifier
             .offset(x = maxWidth * 0.9f, y = maxHeight * 0.9f)
