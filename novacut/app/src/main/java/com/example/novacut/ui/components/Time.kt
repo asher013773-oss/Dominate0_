@@ -67,18 +67,17 @@ fun DustEffect(
     particleCount: Int = 40
 ) {
     val particles = remember {
-        List(particleCount) {
-            DustParticle(
-                x = Random.nextFloat(),
-                y = Random.nextFloat(),
-                vx = (Random.nextFloat() - 0.5f) * 0.02f,
-                vy = (Random.nextFloat() - 0.5f) * 0.02f,
-                radius = Random.nextFloat() * 3f + 1f,
-                alpha = Random.nextFloat() * 0.5f + 0.2f
-                )
-            }
-        }
+    List(particleCount) {
+        DustParticle(
+            x = Random.nextFloat(),
+            y = Random.nextFloat(),
+            vx = (Random.nextFloat() - 0.5f) * 0.02f,
+            vy = (Random.nextFloat() - 0.5f) * 0.02f,
+            radius = Random.nextFloat() * 3f + 1f,
+            alpha = Random.nextFloat() * 0.5f + 0.2f
+        )
     }
+}
 
     // single state value just to force recomposition of the Canvas each frame
     var frameTime by remember { mutableLongStateOf(0L) }
