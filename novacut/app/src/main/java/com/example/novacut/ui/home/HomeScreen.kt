@@ -37,6 +37,8 @@ import com.example.novacut.ui.theme.novacutTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.offset
+
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
