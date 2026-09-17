@@ -11,7 +11,7 @@ val bodyFontFamily = FontFamily(
 )
 
 val displayFontFamily = FontFamily(
-    Font(R.font.fleur_de_leah, FontWeight.Normal)
+    Font(R.font.ruslandisplay, FontWeight.Normal)
 )
 
 // Default Material 3 typography values
