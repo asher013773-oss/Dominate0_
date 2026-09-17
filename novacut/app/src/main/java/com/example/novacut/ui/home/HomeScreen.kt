@@ -61,27 +61,18 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            AnimatedWord(
-    word = "Aurora Reinvigorate",
-    startDelay = 100L,
-    modifier = Modifier
-) {
-    Text(
+        AnimatedWord(
+          word = "Aurora Reinvigorate",
+          startDelay = 100L,
+          modifier = Modifier.padding(top = 2.dp)
+       ) {
+        Text(
         text = word,
         modifier = modifier
     )
 }
 
-@Composable
-private fun Waiting() {
-    Spacer(modifier = Modifier.height(16.dp))
-}
-    Text(
-        text = word,
-        modifier = modifier
-    )
-}
-        
+JustHere()
 HomeTabRow(
     selectedTab = selectedTab,
     onTabSelected = { selectedTab = it }
