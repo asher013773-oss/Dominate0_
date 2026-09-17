@@ -115,19 +115,6 @@ fun DustEffect(
 }
 
 @Composable
-fun AnimatedWord(
-    word: String = "Aurora Reinvigorate",
-    startDelay: Long = 100L,
-    modifier: Modifier = Modifier
-) {
-    Text(
-        text = word,
-        style = MaterialTheme.typography.headlineMedium,
-        modifier = modifier
-    )
-}
-
-@Composable
 fun Wait(modifier: Modifier = Modifier) {
     Row(modifier = modifier) {
         Text(
