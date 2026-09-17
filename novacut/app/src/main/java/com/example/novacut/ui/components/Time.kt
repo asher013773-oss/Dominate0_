@@ -114,10 +114,10 @@ fun DustEffect(
             }
         }
     }
-}
 
 @Composable
-fun Wait(modifier: Modifier = Modifier) {
+fun Wait(modifier = Modifier
+         .offset(x = maxWidth * 0.9f, y = maxHeight *0.9f) {
     Row(modifier = modifier) {
         Text(
             text = "Pro?",
