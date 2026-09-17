@@ -1,5 +1,4 @@
 package com.example.novacut.ui.home
-package com.example.novacut.ui.components
 
 import com.example.novacut.ui.components.*
 import android.content.Intent
