@@ -63,8 +63,23 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     word = "Aurora Reinvigorate",
     startDelay = 100L,
     modifier = Modifier
-)
-Wait()
+) {
+    Text(
+        text = word,
+        modifier = modifier
+    )
+}
+
+@Composable
+private fun Wait() {
+    Spacer(modifier = Modifier.height(16.dp))
+}
+    Text(
+        text = word,
+        modifier = modifier
+    )
+}
+        
 HomeTabRow(
     selectedTab = selectedTab,
     onTabSelected = { selectedTab = it }
