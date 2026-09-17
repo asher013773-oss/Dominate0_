@@ -62,15 +62,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
         AnimatedWord(
-          word = "Aurora Reinvigorate",
-          startDelay = 100L,
-          modifier = Modifier.padding(top = 2.dp)
-       ) {
-        Text(
-        text = word,
-        modifier = modifier
-    )
-}
+    word = "Aurora Reinvigorate",
+    startDelay = 100L,
+    modifier = Modifier.padding(top = 2.dp)
+)
 
 JustHere()
 HomeTabRow(
