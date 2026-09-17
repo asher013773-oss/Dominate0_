@@ -69,7 +69,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         modifier = Modifier.offset(y = SequenceHeight, x = SquirclesWidth)
     )
 
-    JustHere(modifier = modifier.padding(top = 4.dp)
+    JustHere(modifier = modifier.padding(top = 4.dp))
     HomeTabRow(
         selectedTab = selectedTab,
         onTabSelected = { selectedTab = it }
