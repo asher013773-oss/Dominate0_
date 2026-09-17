@@ -42,8 +42,8 @@ import androidx.compose.foundation.layout.Spacer
 fun HomeScreen(modifier: Modifier = Modifier) {
 
     val configuration = LocalConfiguration.current
-    val SquirclesHeight = (configuration.screenHeightDp * 0.3f).dp
-    val SequenceHeight = (configuration.screenWidthtDp * 0.2f).dp
+    val SequenceHeight = (configuration.screenHeightDp * 0.3f).dp
+    val SquirclesWidth = (configuration.screenWidthDp * 0.2f).dp
 
     var selectedTab by remember { mutableStateOf(HomeTab.EDITS) }
     val context = LocalContext.current
@@ -64,7 +64,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     AnimatedWord(
         word = "Aurora Reinvigorate",
         startDelay = 100L,
-        modifier = Modifier.offset(y = SequenceHeight, x = SquirclesHeight)
+        modifier = Modifier.offset(y = SequenceHeight, x = SquirclesWidth)
     )
 
     JustHere(modifier = modifier.padding(top = 4.dp)
