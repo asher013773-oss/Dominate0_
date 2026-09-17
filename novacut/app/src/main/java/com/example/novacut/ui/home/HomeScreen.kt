@@ -1,5 +1,7 @@
 package com.example.novacut.ui.home
+package com.example.novacut.ui.components
 
+import com.example.novacut.ui.components.*
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -32,7 +34,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.statusBarsPadding
-import com.example.novacut.ui.components.*
 import com.example.novacut.ui.theme.novacutTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.Text
@@ -55,20 +56,23 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     ) {
 
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .statusBarsPadding()
-                .verticalScroll(rememberScrollState()),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-        AnimatedWord(
-    word = "Aurora Reinvigorate",
-    startDelay = 100L,
-    modifier = Modifier.padding(top = 2.dp)
-)
+    modifier = Modifier
+        .fillMaxSize()
+        .statusBarsPadding()
+        .verticalScroll(rememberScrollState()),
+    verticalArrangement = Arrangement.spacedBy(16.dp)
+) {
+    AnimatedWord(
+        word = "Aurora Reinvigorate",
+        startDelay = 100L,
+        modifier = Modifier.padding(top = 2.dp)
+    )
 
-JustHere()
-HomeTabRow(
-    selectedTab = selectedTab,
-    onTabSelected = { selectedTab = it }
-)
+    JustHere()
+    HomeTabRow(
+        selectedTab = selectedTab,
+        onTabSelected = { selectedTab = it }
+    )
+}
+} 
+}
