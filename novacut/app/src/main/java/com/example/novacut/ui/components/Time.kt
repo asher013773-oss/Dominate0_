@@ -49,7 +49,7 @@ data class DustParticle(
 )
 
 @Composable
-fun JustHere() {
+fun JustHere(modifier: Modifier = Modifier) {
     Card(
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(
