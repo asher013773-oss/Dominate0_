@@ -61,6 +61,9 @@ fun JustHere() {
             val boundWidth = maxWidth
             val boundHeight = maxHeight
             DustEffect()
+            Wait(
+                modifier = Modifier.offset(x = boundWidth * 0.9f, y = boundHeight * 0.9f)
+            )
         }
     }
 }
@@ -100,24 +103,21 @@ fun DustEffect(
             }
         }
     }
-
-    fun Waiting(modifier: Modifier = Modifier) {
-        Canvas(modifier = modifier.fillMaxSize()) {
-         @Suppress("UNUSED_EXPRESSION") frameTime
+    Canvas(modifier = modifier.fillMaxSize()) {
+        @Suppress("UNUSED_EXPRESSION") frameTime
 
         for (p in particles) {
             drawCircle(
                 color = Color.White.copy(alpha = p.alpha),
                 radius = p.radius,
                 center = Offset(p.x * size.width, p.y * size.height)
-                )
-            }
+            )
         }
     }
+}
 
 @Composable
-fun Wait(modifier = Modifier
-         .offset(x = maxWidth * 0.9f, y = maxHeight *0.9f) {
+fun Wait(modifier: Modifier = Modifier) {
     Row(modifier = modifier) {
         Text(
             text = "Pro?",
