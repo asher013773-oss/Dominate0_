@@ -73,7 +73,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun Wait() {
+private fun Waiting() {
     Spacer(modifier = Modifier.height(16.dp))
 }
     Text(
