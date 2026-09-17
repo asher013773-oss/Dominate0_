@@ -101,15 +101,17 @@ fun DustEffect(
         }
     }
 
-    Canvas(modifier = modifier.fillMaxSize()) {
-        @Suppress("UNUSED_EXPRESSION") frameTime
+    fun Waiting(modifier: Modifier = Modifier) {
+        Canvas(modifier = modifier.fillMaxSize()) {
+         @Suppress("UNUSED_EXPRESSION") frameTime
 
         for (p in particles) {
             drawCircle(
                 color = Color.White.copy(alpha = p.alpha),
                 radius = p.radius,
                 center = Offset(p.x * size.width, p.y * size.height)
-            )
+                )
+            }
         }
     }
 }
