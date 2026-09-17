@@ -80,7 +80,7 @@ fun AnimatedWord(
         letters.take(6).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.displayLarge,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
@@ -89,10 +89,10 @@ fun AnimatedWord(
     }
 }
     Row {
-        letters.take(12).forEachIndexed { i, c ->
+        letters.substring(7..18).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
