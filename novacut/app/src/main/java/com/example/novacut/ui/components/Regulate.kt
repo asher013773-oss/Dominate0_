@@ -87,7 +87,7 @@ fun AnimatedWord(
             )
         }
     }
-}
+    
     Row {
         letters.substring(7..18).forEachIndexed { i, c ->
             Text(
@@ -96,7 +96,8 @@ fun AnimatedWord(
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
-            )
+                )
+            }
         }
     }
 }
