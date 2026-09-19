@@ -38,6 +38,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.animation.core.Spring
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun AnimatedWord(
@@ -80,6 +81,7 @@ fun AnimatedWord(
         letters.take(6).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
+                fontSize = 40.sp
                 style = MaterialTheme.typography.displayLarge,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
@@ -92,6 +94,7 @@ fun AnimatedWord(
         letters.substring(7..18).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
+                fontSize = 20.sp
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
