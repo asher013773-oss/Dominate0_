@@ -66,7 +66,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     AnimatedWord(
         word = "Aurora Reinvigorate",
         startDelay = 100L,
-        modifier = Modifier.offset(y = SequenceHeight, x = SquirclesWidth)
+        modifier = Modifier
+            .offset(y = SequenceHeight, x = SquirclesWidth)
+            .padding = (8.dp)
     )
 
     JustHere(modifier = modifier.padding(top = 4.dp))
