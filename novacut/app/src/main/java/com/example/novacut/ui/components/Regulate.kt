@@ -97,7 +97,8 @@ fun AnimatedWord(
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
-            )
+                )
+            }
         }
     }
 }
