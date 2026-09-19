@@ -91,7 +91,7 @@ fun AnimatedWord(
     }
     
     Row {
-        letters.substring(7..18).forEachIndexed { i, c ->
+        letters.subList(7..18).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
                 fontSize = 20.sp
