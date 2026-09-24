@@ -81,7 +81,7 @@ fun AnimatedWord(
         letters.take(6).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                fontSize = 40.sp,
+                style = MaterialTheme.typography.displayMedium,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
@@ -93,7 +93,7 @@ fun AnimatedWord(
         letters.subList(7, 19).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                fontSize = 20.sp,
+                style = MaterialTheme.typography.titleSmall
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
