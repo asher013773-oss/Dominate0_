@@ -93,7 +93,7 @@ fun AnimatedWord(
         letters.subList(7, 19).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                style = MaterialTheme.typography.titleSmall
+                style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
