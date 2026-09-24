@@ -78,7 +78,7 @@ fun AnimatedWord(
         .offset(x = positionx, y = positiony)
 ) {
     Row {
-        letters.take(6).forEachIndexed { i, c ->
+        letters.subList(0, 6).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
                 fontSize = 40.dp,
