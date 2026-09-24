@@ -54,7 +54,7 @@ fun AnimatedWord(
     val positiony = (configuration.screenHeightDp * 0.3f).dp
 
     LaunchedEffect(word) {
-        letters.indices.forEach { i ->
+        letters.subList(7, 19).forEachIndexed { i ->
             launch {
                 delay(startDelay + i * 40L)
                 offsets[i].animateTo(
@@ -81,7 +81,7 @@ fun AnimatedWord(
         letters.take(6).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                style = MaterialTheme.typography.displayMedium,
+                fontSize = 40.dp,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
@@ -93,7 +93,7 @@ fun AnimatedWord(
         letters.subList(7, 19).forEachIndexed { i, c ->
             Text(
                 text = c.toString(),
-                style = MaterialTheme.typography.titleSmall,
+                fontSize = 20.dp,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
