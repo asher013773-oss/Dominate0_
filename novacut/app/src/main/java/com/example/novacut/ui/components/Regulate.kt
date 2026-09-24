@@ -52,9 +52,10 @@ fun AnimatedWord(
     val configuration = LocalConfiguration.current
     val positionx = (configuration.screenHeightDp * 0.5f).dp
     val positiony = (configuration.screenHeightDp * 0.3f).dp
-
+    val let = "rejuvenate"
+    
     LaunchedEffect(word) {
-        letters.subList(7, 19).forEachIndexed { i, c ->
+        let.indices.forEach { i, c ->
             launch {
                 delay(startDelay + i * 40L)
                 offsets[i].animateTo(
@@ -80,7 +81,7 @@ fun AnimatedWord(
     Row {
         letters.subList(0, 7).forEachIndexed { i, c ->
             Text(
-                text = c.toString(),
+                text = let,
                 fontSize = 40.dp,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
@@ -90,10 +91,9 @@ fun AnimatedWord(
     }
     
     Row {
-        letters.subList(7, 19).forEachIndexed { i, c ->
-            Text(
-                text = c.toString(),
-                fontSize = 20.dp,
+        Text(
+          text = let,
+          fontSize = 20.dp,
                 modifier = Modifier
                     .offset(x = offsets[i].value.dp)
                     .alpha(alphas[i].value)
