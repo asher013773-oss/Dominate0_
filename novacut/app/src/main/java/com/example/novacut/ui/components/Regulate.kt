@@ -39,6 +39,8 @@ import kotlinx.coroutines.launch
 import androidx.compose.animation.core.Spring
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.sp
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.runtime.getValue
 
 @Composable
 fun AnimatedWord(
@@ -54,11 +56,13 @@ fun AnimatedWord(
     val positiony = (configuration.screenHeightDp * 0.3f).dp
     val let = "rejuvenate"
     
-    LaunchedEffect(word) {
-        Column(
-            modifier = Modifier
-              .padding(end = 8.dp)
-              .offset(x = positionx, y = positiony)
+    @Composable
+    fun Scroll () {
+        LaunchedEffect(word) {
+            Column(
+                modifier = Modifier
+                  .padding(end = 8.dp)
+                  .offset(x = positionx, y = positiony)
 ) {
     Row {
         letters.subList(0, 7).forEachIndexed { i, c ->
