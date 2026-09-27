@@ -55,28 +55,10 @@ fun AnimatedWord(
     val let = "rejuvenate"
     
     LaunchedEffect(word) {
-        let.indices.forEach { i, c ->
-            launch {
-                delay(startDelay + i * 40L)
-                offsets[i].animateTo(
-                    targetValue = 0f,
-                    animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioMediumBouncy,
-                        stiffness = Spring.StiffnessLow
-                    )
-                )
-            }
-            launch {
-                delay(startDelay + i * 40L)
-                alphas[i].animateTo(1f, tween(300))
-            }
-        }
-    }
-
-    Column(
-    modifier = Modifier
-        .padding(end = 8.dp)
-        .offset(x = positionx, y = positiony)
+        Column(
+            modifier = Modifier
+              .padding(end = 8.dp)
+              .offset(x = positionx, y = positiony)
 ) {
     Row {
         letters.subList(0, 7).forEachIndexed { i, c ->
@@ -84,19 +66,25 @@ fun AnimatedWord(
                 text = let,
                 fontSize = 40.dp,
                 modifier = Modifier
-                    .offset(x = offsets[i].value.dp)
-                    .alpha(alphas[i].value)
             )
         }
     }
     
     Row {
-        Text(
+            var visible by remember { mutableStateOf(false) }
+            val alpha by animateFloatAsState(
+                targetValue = if (visible) 1f else 0f,
+    animationSpec = spring(
+        dampingRatio = Spring.DampingRatioMediumBouncy,
+        stiffness = Spring.StiffnessLow
+    ),
+    label = "textAlpha"
+)
+ Row(
+     Text(
           text = let,
           fontSize = 20.dp,
                 modifier = Modifier
-                    .offset(x = offsets[i].value.dp)
-                    .alpha(alphas[i].value)
                 )
             }
         }
