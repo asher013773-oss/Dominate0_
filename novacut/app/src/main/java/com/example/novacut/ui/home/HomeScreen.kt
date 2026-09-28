@@ -67,7 +67,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         word = "Aurora Reinvigorate",
         startDelay = 100L,
         modifier = Modifier
-            .offset(y = SequenceHeight, x = SquirclesWidth)
             .padding(8.dp)
     )
 
