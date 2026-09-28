@@ -53,7 +53,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color(0xFFF2FFF5))
+            .background(Color.White)
     ) {
 
         Column(
@@ -68,12 +68,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         startDelay = 100L,
         modifier = Modifier
             .padding(8.dp)
-    )
-
-    JustHere(modifier = modifier.padding(top = 4.dp))
-    HomeTabRow(
-        selectedTab = selectedTab,
-        onTabSelected = { selectedTab = it }
     )
 }
 } 
