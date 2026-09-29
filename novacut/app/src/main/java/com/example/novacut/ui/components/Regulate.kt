@@ -30,10 +30,9 @@ fun AnimatedWord(
 ) {
     val letters = remember(word) { word.toCharArray().toList() }
     val configuration = LocalConfiguration.current
-    val positionX = (configuration.screenHeightDp * 0.5f).dp
+    val positionX = (configuration.screenHeightDp * 0.2f).dp
     val positionY = (configuration.screenHeightDp * 0.3f).dp
 
-    var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
         @Composable
@@ -46,8 +45,7 @@ fun AnimatedWord(
             letters.take(7).forEach { c ->
                 Text(
                     text = c.toString(),
-                    fontSize = 40.sp,
-                    color = Color.Black
+                    fontSize = 40.sp
                 )
             }
         }
@@ -55,8 +53,7 @@ fun AnimatedWord(
         Row {
             Text(
                 text = word,
-                fontSize = 20.sp,
-                color = Color.Black
+                fontSize = 20.sp
             )
         }
     }
