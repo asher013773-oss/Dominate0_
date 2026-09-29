@@ -36,23 +36,9 @@ fun AnimatedWord(
     var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
-        delay(startDelay)
-        visible = true
-    }
-
-    val alpha by animateFloatAsState(
-        targetValue = if (visible) 1f else 0f,
-        animationSpec = spring(
-            dampingRatio = Spring.DampingRatioMediumBouncy,
-            stiffness = Spring.StiffnessLow
-        ),
-        label = "textAlpha"
-    )
-
-    Column(
-        modifier = modifier
-            .padding(end = 8.dp)
-            .offset(x = positionX, y = positionY)
+        Column(
+            modifier = modifier
+               .padding(end = 8.dp)
     ) {
         Row {
             letters.take(7).forEach { c ->
