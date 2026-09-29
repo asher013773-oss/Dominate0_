@@ -36,9 +36,10 @@ fun AnimatedWord(
     var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
-        Column(
-            modifier = modifier
-               .padding(end = 8.dp)
+        fun scroll() (
+            Column(
+                modifier = modifier
+                   .padding(end = 8.dp)
     ) {
         Row {
             letters.take(7).forEach { c ->
@@ -58,4 +59,5 @@ fun AnimatedWord(
             )
         }
     }
+}
 }
