@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun AnimatedWord(
@@ -58,7 +59,7 @@ fun AnimatedWord(
                 Text(
                     text = c.toString(),
                     fontSize = 40.sp,
-                    modifier = Modifier.alpha(alpha)
+                    color = Color.Black
                 )
             }
         }
@@ -67,7 +68,7 @@ fun AnimatedWord(
             Text(
                 text = word,
                 fontSize = 20.sp,
-                modifier = Modifier.alpha(alpha)
+                color = Color.Black
             )
         }
     }
