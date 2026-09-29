@@ -36,6 +36,7 @@ fun AnimatedWord(
     var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
+        @Composable
         fun Scroll() {
             Column(
                 modifier = modifier
