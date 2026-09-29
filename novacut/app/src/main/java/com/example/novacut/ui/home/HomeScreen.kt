@@ -68,7 +68,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         startDelay = 100L,
         modifier = Modifier
             .padding(8.dp)
-            .offset( x = SquirclesWidth, y = SequenceHeight )
+            .offset( x = SquirclesWidth.x, y = SequenceHeight.y )
     )
 }
 } 
