@@ -33,7 +33,7 @@ fun AnimatedWord(
     val positionX = (configuration.screenHeightDp * 0.5f).dp
     val positionY = (configuration.screenHeightDp * 0.3f).dp
 
-    var visible by remember { mutableStateOf(false) }
+    var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
         delay(startDelay)
