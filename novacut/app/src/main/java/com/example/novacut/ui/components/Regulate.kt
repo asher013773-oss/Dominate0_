@@ -36,7 +36,7 @@ fun AnimatedWord(
     var visible by remember { mutableStateOf(true) }
 
     LaunchedEffect(word, startDelay) {
-        fun scroll() (
+        fun Scroll() {
             Column(
                 modifier = modifier
                    .padding(end = 8.dp)
