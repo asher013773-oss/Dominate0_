@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Alignment
 
 @Composable
 fun AnimatedWord(
@@ -39,8 +40,8 @@ fun AnimatedWord(
         fun Scroll() {
             Column(
                 modifier = modifier
-                   .padding(end = 8.dp)
-                   verticalArrangement = Arrangement.Center, // Centers items vertically
+                   .padding(end = 8.dp),
+                   verticalArrangement = Arrangement.Center,
                    horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
