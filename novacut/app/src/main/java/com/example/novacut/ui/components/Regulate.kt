@@ -40,6 +40,8 @@ fun AnimatedWord(
             Column(
                 modifier = modifier
                    .padding(end = 8.dp)
+                   verticalArrangement = Arrangement.Center, // Centers items vertically
+                   horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
             letters.take(7).forEach { c ->
