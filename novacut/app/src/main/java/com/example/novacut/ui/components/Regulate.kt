@@ -26,7 +26,7 @@ import androidx.compose.foundation.layout.Arrangement
 
 @Composable
 fun AnimatedWord(
-    word: String,
+    word: Strring = "Aurora Reinvigorate"
     startDelay: Long = 0L,
     modifier: Modifier = Modifier
 ) {
