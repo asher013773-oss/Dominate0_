@@ -64,11 +64,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     verticalArrangement = Arrangement.spacedBy(16.dp)
 ) {
     AnimatedWord(
-        word = "Aurora Reinvigorate",
+        word = word
         startDelay = 100L,
         modifier = Modifier
             .padding(8.dp)
-            .offset( x = SquirclesWidth, y = SequenceHeight)
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
     )
 }
 } 
