@@ -41,9 +41,7 @@ fun AnimatedWord(
         fun Scroll() {
             Column(
                 modifier = modifier
-                   .padding(end = 8.dp),
-                   verticalArrangement = Arrangement.Center,
-                   horizontalAlignment = Alignment.CenterHorizontally
+                   .padding(end = 8.dp)
     ) {
         Row {
             letters.take(7).forEach { c ->
